@@ -722,16 +722,3 @@ plt.title('w')
 plt.ylabel('Dynamic Viscosity  (N s/m2)')
 plt.xlabel('Velocity (m s-1)')
 plt.tight_layout()
-
-import meshio
-import os
-file_list = os.listdir("/Users/cequilod/VTK/")
-print(file_list)
-sortedList = sorted(file_list)
-sortedList = sortedList[1:]
-j = 0
-for name in sortedList:
-    mesh = meshio.read('/Users/cequilod/VTK/' + name)
-    mesh.write('/Users/cequilod/VTK/regularWave_' + str(j) + '.vtu')
-    print(j)
-    j = j + 1
